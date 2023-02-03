@@ -20,7 +20,7 @@ const FileList = ({ list }: FileListInterface) => {
             {files.map((val, ind) => {
                 return (
                     <div key = {ind} className = "w-full">
-                        <p className = "font-semibold text-center">{ind + 1}. {val.name}</p>
+                        <p className = "text-center font-medium">{ind + 1}. {val.name}</p>
                     </div>
                 )
             })}
@@ -48,6 +48,8 @@ function App() {
                 if (res.status < 300) {
                     alert("Successfull saved files.");
                     setFiles(null);
+                    const input = document.getElementById("files") as HTMLInputElement;
+                    input.value = "";
                 }
                 return;
             }

@@ -14,7 +14,6 @@ const upload = multer({ storage });
 
 router.post("/upload", upload.array('files', 10), (req, res) => {
     try {
-        console.log(req.files?.length);
         res.end("Received files!");
     }
     catch (e) {
